@@ -423,4 +423,16 @@
           org-drawers '("PROPERTIES" "CLOCK" "NOTES" "LOGBOOK")
           org-log-done 'time)))
 
+;;; Load Projectile for project management, using the default 'C-c p'
+;;; prefix for its commands.
+
+(use-package projectile
+  :load-path "projectile/"
+  :init (projectile-global-mode)
+  :config
+  (progn
+    (setq projectile-enable-caching t)
+    (setq projectile-switch-project-action 'projectile-dired)
+    (setq projectile-completion-system 'ido)))
+
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
