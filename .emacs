@@ -193,9 +193,9 @@
 
 (use-package key-chord
   :bind ("C-c n k" . key-chord-mode)
+  :init (key-chord-mode 1)
   :config
   (progn
-    (key-chord-mode 1)
     (key-chord-define-global "##" 'server-edit)
     (key-chord-define-global "VV" 'other-window)
     (key-chord-define-global "KK" 'ido-kill-buffer)
