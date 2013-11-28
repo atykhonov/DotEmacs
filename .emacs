@@ -420,7 +420,10 @@
 
 (use-package projectile
   :load-path "projectile/"
-  :init (projectile-global-mode)
+  :init
+  (progn
+    (use-package recentf)
+    (projectile-global-mode))
   :config
   (progn
     (setq projectile-enable-caching t)
