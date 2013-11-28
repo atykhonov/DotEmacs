@@ -307,6 +307,11 @@
             (java-mode . "java")
             (other . "linux")))))
 
+;;; Rust:
+
+(use-package rust-mode
+  :mode ("\\.rs" . rust-mode))
+
 ;;; Emacs Lisp:
 
 (defun ejmr/byte-compile-current-elisp-file ()
