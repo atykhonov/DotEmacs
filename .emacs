@@ -125,14 +125,6 @@
 
 ;;; These are some personal editing commands that I use everywhere.
 
-(defun ejmr/backward-kill-line ()
-  "Delete everything from the start of the line to the point."
-  (interactive)
-  (kill-line 0)
-  (indent-according-to-mode))
-
-(bind-key "<C-backspace>" 'ejmr/backward-kill-line)
-
 (defun ejmr/move-line-up ()
   "Move the current line up."
   (interactive)
