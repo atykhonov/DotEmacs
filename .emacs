@@ -237,6 +237,10 @@
 
 ;;; These are packages I use for editing plain text in general.
 
+(use-package simple
+  :commands visual-line-mode
+  :bind ("C-c n l" . visual-line-mode))
+
 (use-package artbollocks-mode
   :config (add-hook 'text-mode-hook 'artbollocks-mode))
 
