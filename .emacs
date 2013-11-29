@@ -292,7 +292,8 @@
     (setq lua-indent-level 4)
     (use-package lua-block
       :config (lua-block-mode t)))
-  :mode (("\\.rockspec" . lua-mode)
+  :mode (("\\.lua" . lua-mode)
+         ("\\.rockspec" . lua-mode)
          ("\\.busted" . lua-mode)
          ("\\.spec.lua" . fundamental-mode)
          ("\\.slua" . lua-mode)))
