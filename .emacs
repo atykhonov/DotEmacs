@@ -353,6 +353,7 @@
 ;;; These packages affect my modeline.
 
 (use-package powerline
+  :disabled t
   :if window-system
   :load-path "powerline/"
   :config (powerline-default-theme))
