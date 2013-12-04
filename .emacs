@@ -251,10 +251,9 @@
 
 (use-package typopunct
   :bind ("C-c n t" . typopunct-mode)
+  :init (add-hook 'text-mode-hook 'typopunct-mode)
   :config
-  (progn
-    (typopunct-change-language 'english t)
-    (add-hook 'text-mode-hook 'typopunct-mode)))
+  (typopunct-change-language 'english t))
 
 (use-package flyspell
   :config (flyspell-mode 1))
