@@ -433,7 +433,12 @@
   :load-path "projectile/"
   :init
   (progn
-    (use-package recentf)
+    (use-package recentf
+      :bind ("C-c x r" . recentf-open-files)
+      :init
+      (progn
+       (recentf-mode 1)
+       (setq recentf-max-menu-items 25)))
     (projectile-global-mode))
   :config
   (progn
