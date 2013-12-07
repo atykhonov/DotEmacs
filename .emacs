@@ -256,6 +256,8 @@
   (typopunct-change-language 'english t))
 
 (use-package flyspell
+  :bind (("C-c n s" . flyspell-mode)
+         ("C-c n c" . flyspell-prog-mode))
   :config (flyspell-mode 1))
 
 (use-package writeroom-mode
