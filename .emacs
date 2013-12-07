@@ -271,9 +271,10 @@
 ;;; I use Flycheck in many programming modes by default.
 
 (use-package flycheck
+  :commands global-flycheck-mode
   :load-path "flycheck/"
   :bind ("C-c n f" . flycheck-mode)
-  :config (add-hook 'after-init-hook #'global-flycheck-mode))
+  :config (global-flycheck-mode 1))
 
 ;;; Git:
 
