@@ -1,0 +1,6 @@
+# name: Code Block
+# key: code-block
+# --
+~~~ { .${1:Language} .numberLines }
+$0
+~~~
