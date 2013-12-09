@@ -1,0 +1,8 @@
+# name: New Scheme Shell Script
+# key: new-scsh
+# --
+#!/usr/local/bin/scsh \
+-e main -s
+!#
+
+$0
