@@ -387,13 +387,6 @@
          ("\\.markdown" . markdown-mode))
   :config
   (progn
-    (defun ejmr/insert-mail-signature ()
-      (interactive)
-      (when (string= (buffer-file-name) "/home/eric/Temp/mail.md")
-        (mail-signature)))
-
-    (bind-key "C-c s" 'ejmr/insert-mail-signature markdown-mode-map)
-
     (defun ejmr/toggle-markdown-mode-wrapping ()
       (interactive)
       (let ((normal-settings (and auto-fill-function (not word-wrap))))
@@ -408,10 +401,26 @@
 
     (bind-key "C-c w" 'ejmr/toggle-markdown-mode-wrapping markdown-mode-map)))
 
+;;; Forth:
+
+(use-package forth
+  :bind ("C-c m f" . forth-mode)
+  :mode (("\\.forth" . forth-mode)
+         ("\\.fs" . forth-mode))
+  :interpreter ("gforth" . forth-mode))
+
 ;;; Mail:
 
 (use-package sendmail
-  :bind ("C-c m a" . mail-mode))
+  :bind ("C-c m a" . mail-mode)
+  :config
+  (progn
+    (defun ejmr/insert-mail-signature ()
+      (interactive)
+      (when (string= (buffer-file-name) "/home/eric/Temp/mail.md")
+        (mail-signature)))
+
+    (bind-key "C-c s" 'ejmr/insert-mail-signature markdown-mode-map)))
 
 ;;; Org Mode:
 
