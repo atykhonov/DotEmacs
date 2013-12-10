@@ -382,9 +382,9 @@
 ;;; Markdown:
 
 (defun ejmr/insert-mail-signature ()
-      (interactive)
-      (when (string= (buffer-file-name) "/home/eric/Temp/mail.md")
-        (mail-signature)))
+  (interactive)
+  (when (string= (buffer-file-name) "/home/eric/Temp/mail.md")
+    (mail-signature)))
 
 (use-package markdown-mode
   :bind ("C-c m k" . markdown-mode)
@@ -447,8 +447,8 @@
       :bind ("C-c x r" . recentf-open-files)
       :init
       (progn
-       (recentf-mode 1)
-       (setq recentf-max-menu-items 25)))
+        (recentf-mode 1)
+        (setq recentf-max-menu-items 25)))
     (projectile-global-mode))
   :config
   (progn
