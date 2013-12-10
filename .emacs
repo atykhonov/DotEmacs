@@ -241,6 +241,10 @@
   :commands visual-line-mode
   :bind ("C-c n l" . visual-line-mode))
 
+(use-package autopair
+  :load-path "autopair/"
+  :idle (autopair-global-mode))
+
 (use-package artbollocks-mode
   :config (add-hook 'text-mode-hook 'artbollocks-mode))
 
