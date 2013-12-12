@@ -78,6 +78,8 @@
 (tooltip-mode 1)
 (electric-pair-mode 0)
 
+(setq c-default-style "linux")
+
 (put 'narrow-to-page 'disabled nil)
 
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-14"))
@@ -307,16 +309,6 @@
          ("\\.busted" . lua-mode)
          ("\\.spec.lua" . fundamental-mode)
          ("\\.slua" . lua-mode)))
-
-;;; CC Mode:
-
-(use-package cc-mode
-  :init
-  (progn
-    (setq c-default-style
-          '((csharp-mode . "linux")
-            (java-mode . "java")
-            (other . "linux")))))
 
 ;;; Rust:
 
