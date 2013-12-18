@@ -267,8 +267,7 @@
   :config (flyspell-mode 1))
 
 (use-package writeroom-mode
-  :load-path "writeroom-mode/"
-  :bind ("C-c n w" . writeroom-mode))
+  :load-path "writeroom-mode/")
 
 ;;; My Pomodoro timer of choice.
 
