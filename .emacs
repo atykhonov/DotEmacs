@@ -248,7 +248,12 @@
   :idle (autopair-global-mode))
 
 (use-package artbollocks-mode
-  :config (add-hook 'text-mode-hook 'artbollocks-mode))
+  :config
+  (progn
+    (add-hook 'text-mode-hook 'artbollocks-mode)
+    (defun ejmr/disable-artbollocks-mode ()
+      (artbollocks-mode 0))
+    (add-hook 'org-mode-hook 'ejmr/disable-artbollocks-mode)))
 
 (use-package anchored-transpose
   :bind ("C-c t t" . anchored-transpose))
