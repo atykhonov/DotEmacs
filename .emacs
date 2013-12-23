@@ -466,4 +466,11 @@
   (progn
     (bind-key "." 'repeat god-local-mode-map)))
 
+;;; Easy Kill:
+
+(use-package easy-kill
+  :load-path "easy-kill/"
+  :commands easy-kill
+  :bind ("M-w" . easy-kill))
+
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
