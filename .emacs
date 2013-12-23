@@ -406,14 +406,6 @@
     (bind-key "C-c w" 'ejmr/toggle-markdown-mode-wrapping markdown-mode-map)
     (bind-key "C-c s" 'ejmr/insert-mail-signature markdown-mode-map)))
 
-;;; Forth:
-
-(use-package forth
-  :bind ("C-c m f" . forth-mode)
-  :mode (("\\.forth" . forth-mode)
-         ("\\.fs" . forth-mode))
-  :interpreter ("gforth" . forth-mode))
-
 ;;; Mail:
 
 (use-package sendmail
@@ -478,5 +470,14 @@
   :load-path "tiny/"
   :commands tiny-setup-default
   :config (tiny-setup-default))
+
+;;; Forth:
+
+(use-package forth-mode
+  :commands forth-mode
+  :bind ("C-c m f" . forth-mode)
+  :mode (("\\.forth" . forth-mode)
+         ("\\.fs" . forth-mode))
+  :interpreter ("gforth" . forth-mode))
 
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
