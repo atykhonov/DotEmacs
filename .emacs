@@ -472,4 +472,11 @@
   :commands easy-kill
   :bind ("M-w" . easy-kill))
 
+::; Tiny:
+
+(use-package tiny
+  :load-path "tiny/"
+  :commands tiny-setup-default
+  :config (tiny-setup-default))
+
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
