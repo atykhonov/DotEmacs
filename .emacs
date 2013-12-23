@@ -260,11 +260,14 @@
 
 (use-package unfill)
 
-(use-package typopunct
-  :bind ("C-c n t" . typopunct-mode)
-  :init (add-hook 'text-mode-hook 'typopunct-mode)
+(use-package typo
+  :load-path "typoel/"
+  :commands typo-global-mode
+  :bind ("C-c n t" . typo-global-mode)
   :config
-  (typopunct-change-language 'english t))
+  (progn
+    (typo-global-mode 1)
+    (add-hook 'text-mode-hook 'typo-mode)))
 
 (use-package flyspell
   :bind (("C-c n s" . flyspell-mode)
