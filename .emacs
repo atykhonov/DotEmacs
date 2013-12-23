@@ -456,4 +456,14 @@
     (setq projectile-switch-project-action 'projectile-dired)
     (setq projectile-completion-system 'ido)))
 
+;;; God Mode:
+
+(use-package god-mode
+  :load-path "god-mode/"
+  :commands god-mode-all
+  :bind ("<C-escape>" . god-mode-all)
+  :config
+  (progn
+    (bind-key "." 'repeat god-local-mode-map)))
+
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
