@@ -312,6 +312,7 @@
   (progn
     (setq lua-indent-level 4)
     (use-package lua-block
+      :commands lua-block-mode
       :config (lua-block-mode t)))
   :mode (("\\.lua" . lua-mode)
          ("\\.rockspec" . lua-mode)
