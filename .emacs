@@ -268,6 +268,7 @@
   (progn
     (typo-global-mode 1)
     (add-hook 'text-mode-hook 'typo-mode)
+    (add-hook 'markdown-mode-hook 'typo-mode)
     (add-hook 'org-mode-hook 'typo-mode)))
 
 (use-package flyspell
