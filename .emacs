@@ -361,11 +361,6 @@
 
 ;;; These packages affect my modeline.
 
-(use-package powerline
-  :if window-system
-  :load-path "powerline/"
-  :config (powerline-default-theme))
-
 (use-package anzu
   :load-path "emacs-anzu/"
   :config (global-anzu-mode 1))
