@@ -262,12 +262,13 @@
 
 (use-package typo
   :load-path "typoel/"
-  :commands typo-global-mode
-  :bind ("C-c n t" . typo-global-mode)
+  :commands (typo-global-mode typo-mode)
+  :bind ("C-c n t" . typo-mode)
   :config
   (progn
     (typo-global-mode 1)
-    (add-hook 'text-mode-hook 'typo-mode)))
+    (add-hook 'text-mode-hook 'typo-mode)
+    (add-hook 'org-mode-hook 'typo-mode)))
 
 (use-package flyspell
   :bind (("C-c n s" . flyspell-mode)
