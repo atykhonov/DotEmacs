@@ -197,14 +197,6 @@
     (key-chord-define-global "KK" 'ido-kill-buffer)
     (key-chord-define-global "RR" 'toggle-read-only)))
 
-;;; Easier navigation between windows.
-
-(use-package winner-mode
-  :config
-  (progn
-    (winner-mode 1)
-    (windmove-default-keybindings)))
-
 ;;; I use these packages to navigate and edit text in semantic terms,
 ;;; with the Expand Region package being the foundation for the rest.
 
@@ -216,13 +208,7 @@
     (use-package change-inner
       :load-path "lisp/change-inner.el/"
       :bind (("M-i" . change-inner)
-             ("M-o" . change-outer)))
-    (use-package smart-forward
-      :load-path "lisp/smart-forward.el/"
-      :bind (("M-<up>" . smart-up)
-             ("M-<down>" . smart-down)
-             ("M-<left>" . smart-backward)
-             ("M-<right>" . smart-forward)))))
+             ("M-o" . change-outer)))))
 
 ;;; These packages also help navigate through text but are more
 ;;; focused on jumping to specific characters or fixed positions.
@@ -249,18 +235,8 @@
   :load-path "lisp/autopair/"
   :idle (autopair-global-mode))
 
-(use-package artbollocks-mode
-  :config
-  (progn
-    (add-hook 'text-mode-hook 'artbollocks-mode)
-    (defun ejmr/disable-artbollocks-mode ()
-      (artbollocks-mode 0))
-    (add-hook 'org-mode-hook 'ejmr/disable-artbollocks-mode)))
-
 (use-package anchored-transpose
   :bind ("C-c t t" . anchored-transpose))
-
-(use-package unfill)
 
 (use-package typo
   :load-path "lisp/typoel/"
@@ -429,50 +405,6 @@
                                         "ABORTED(a)"))
           org-drawers '("PROPERTIES" "CLOCK" "NOTES" "LOGBOOK")
           org-log-done 'time)))
-
-;;; Load Projectile for project management, using the default 'C-c p'
-;;; prefix for its commands.
-
-(use-package projectile
-  :load-path "lisp/projectile/"
-  :init
-  (progn
-    (use-package recentf
-      :bind ("C-c x r" . recentf-open-files)
-      :init
-      (progn
-        (recentf-mode 1)
-        (setq recentf-max-menu-items 25)))
-    (projectile-global-mode))
-  :config
-  (progn
-    (setq projectile-enable-caching t)
-    (setq projectile-switch-project-action 'projectile-dired)
-    (setq projectile-completion-system 'ido)))
-
-;;; God Mode:
-
-(use-package god-mode
-  :load-path "lisp/god-mode/"
-  :commands god-mode-all
-  :bind ("<C-escape>" . god-mode-all)
-  :config
-  (progn
-    (bind-key "." 'repeat god-local-mode-map)))
-
-;;; Easy Kill:
-
-(use-package easy-kill
-  :load-path "lisp/easy-kill/"
-  :commands easy-kill
-  :bind ("M-w" . easy-kill))
-
-::; Tiny:
-
-(use-package tiny
-  :load-path "lisp/tiny/"
-  :commands tiny-setup-default
-  :config (tiny-setup-default))
 
 ;;; Forth:
 
