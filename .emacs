@@ -18,7 +18,7 @@
 ;;; First, setup my load path before anything else so that Emacs can
 ;;; find everything.
 
-(add-to-list 'load-path "/home/eric/.emacs.d/")
+(add-to-list 'load-path "/home/eric/.emacs.d/lisp/")
 
 ;;; I often alias 'emacs' to 'emacsclient' in my shell, so the server
 ;;; needs to be running.
@@ -87,7 +87,7 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "/usr/local/bin/conkeror")
 
-(setq custom-file "/home/eric/.emacs.d/.emacs-custom.el")
+(setq custom-file "/home/eric/.emacs.d/lisp/.emacs-custom.el")
 (load custom-file 'noerror)
 
 ;;; Setup registers for files I commonly edit.
@@ -100,7 +100,7 @@
 ;;; Load use-package and bind-key before anything else so that I can
 ;;; use those for loading all other packages.
 
-(add-to-list 'load-path "/home/eric/.emacs.d/use-package/")
+(add-to-list 'load-path "/home/eric/.emacs.d/lisp/use-package/")
 (require 'use-package)
 (require 'bind-key)
 
@@ -114,7 +114,9 @@
 ;;; These packages provide functions that others rely on so I want to
 ;;; load them early.
 
-(use-package dash :load-path "dash.el/")
+(use-package epl :load-path "lisp/epl/")
+(use-package dash :load-path "lisp/dash.el/")
+(use-package pkg-info :load-path "lisp/pkg-info/")
 (use-package s)
 (use-package f)
 (use-package ido :config (ido-mode 1))
@@ -207,16 +209,16 @@
 ;;; with the Expand Region package being the foundation for the rest.
 
 (use-package expand-region
-  :load-path "expand-region.el/"
+  :load-path "lisp/expand-region.el/"
   :bind ("C-=" . er/expand-region)
   :config
   (progn
     (use-package change-inner
-      :load-path "change-inner.el/"
+      :load-path "lisp/change-inner.el/"
       :bind (("M-i" . change-inner)
              ("M-o" . change-outer)))
     (use-package smart-forward
-      :load-path "smart-forward.el/"
+      :load-path "lisp/smart-forward.el/"
       :bind (("M-<up>" . smart-up)
              ("M-<down>" . smart-down)
              ("M-<left>" . smart-backward)
@@ -231,10 +233,10 @@
 ;;; Load snippets that I use in a variety of major modes.
 
 (use-package yasnippet
-  :load-path "yasnippet/"
+  :load-path "lisp/yasnippet/"
   :config
   (progn
-    (yas-load-directory "/home/eric/.emacs.d/yasnippet/snippets/")
+    (yas-load-directory "/home/eric/.emacs.d/lisp/yasnippet/snippets/")
     (yas-global-mode)))
 
 ;;; These are packages I use for editing plain text in general.
@@ -244,7 +246,7 @@
   :bind ("C-c n l" . visual-line-mode))
 
 (use-package autopair
-  :load-path "autopair/"
+  :load-path "lisp/autopair/"
   :idle (autopair-global-mode))
 
 (use-package artbollocks-mode
@@ -261,7 +263,7 @@
 (use-package unfill)
 
 (use-package typo
-  :load-path "typoel/"
+  :load-path "lisp/typoel/"
   :commands (typo-global-mode typo-mode)
   :bind ("C-c n t" . typo-mode)
   :config
@@ -277,19 +279,19 @@
   :config (flyspell-mode 1))
 
 (use-package writeroom-mode
-  :load-path "writeroom-mode/")
+  :load-path "lisp/writeroom-mode/")
 
 ;;; My Pomodoro timer of choice.
 
 (use-package tomatinho
-  :load-path "tomatinho/"
+  :load-path "lisp/tomatinho/"
   :bind ("<f12>" . tomatinho))
 
 ;;; I use Flycheck in many programming modes by default.
 
 (use-package flycheck
   :commands global-flycheck-mode
-  :load-path "flycheck/"
+  :load-path "lisp/flycheck/"
   :bind ("C-c n f" . flycheck-mode)
   :config (global-flycheck-mode 1))
 
@@ -349,7 +351,7 @@
 ;;; JavaScript:
 
 (use-package js3-mode
-  :load-path "js3-mode/"
+  :load-path "lisp/js3-mode/"
   :mode (("\\.json" . js3-mode)
          ("\\.js" . js3-mode))
   :init (defalias 'js-mode 'js3-mode))
@@ -362,13 +364,13 @@
 ;;; These packages affect my modeline.
 
 (use-package anzu
-  :load-path "emacs-anzu/"
+  :load-path "lisp/emacs-anzu/"
   :config (global-anzu-mode 1))
 
 ;;; Twitter:
 
 (use-package twittering-mode
-  :load-path "twittering-mode/"
+  :load-path "lisp/twittering-mode/"
   :bind ("C-c x t" . twit)
   :config
   (progn
@@ -415,7 +417,7 @@
 ;;; Org Mode:
 
 (use-package org-install
-  :load-path "org-mode/lisp/"
+  :load-path "lisp/org-mode/lisp/"
   :config
   (progn
     (setq org-todo-keywords '((sequence "TODO(t)"
@@ -432,7 +434,7 @@
 ;;; prefix for its commands.
 
 (use-package projectile
-  :load-path "projectile/"
+  :load-path "lisp/projectile/"
   :init
   (progn
     (use-package recentf
@@ -451,7 +453,7 @@
 ;;; God Mode:
 
 (use-package god-mode
-  :load-path "god-mode/"
+  :load-path "lisp/god-mode/"
   :commands god-mode-all
   :bind ("<C-escape>" . god-mode-all)
   :config
@@ -461,14 +463,14 @@
 ;;; Easy Kill:
 
 (use-package easy-kill
-  :load-path "easy-kill/"
+  :load-path "lisp/easy-kill/"
   :commands easy-kill
   :bind ("M-w" . easy-kill))
 
 ::; Tiny:
 
 (use-package tiny
-  :load-path "tiny/"
+  :load-path "lisp/tiny/"
   :commands tiny-setup-default
   :config (tiny-setup-default))
 
