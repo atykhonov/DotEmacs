@@ -415,4 +415,10 @@
          ("\\.fs" . forth-mode))
   :interpreter ("gforth" . forth-mode))
 
+;;; Zencoding
+
+(use-package zencoding-mode
+  :load-path "lisp/zencoding/"
+  :bind ("C-c m z" . zencoding-mode))
+
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
