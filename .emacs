@@ -195,6 +195,7 @@
     (key-chord-define-global "##" 'server-edit)
     (key-chord-define-global "VV" 'other-window)
     (key-chord-define-global "KK" 'ido-kill-buffer)
+    (key-chord-define-global "BB" 'ido-switch-buffer)
     (key-chord-define-global "RR" 'toggle-read-only)))
 
 ;;; I use these packages to navigate and edit text in semantic terms,
@@ -419,6 +420,6 @@
 
 (use-package zencoding-mode
   :load-path "lisp/zencoding/"
-  :bind ("C-c m z" . zencoding-mode))
+  :bind ("C-c n z" . zencoding-mode))
 
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
