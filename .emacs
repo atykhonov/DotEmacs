@@ -413,6 +413,7 @@
   :commands forth-mode
   :bind ("C-c m f" . forth-mode)
   :mode (("\\.forth" . forth-mode)
+         ("\\.fth" . forth-mode)
          ("\\.fs" . forth-mode))
   :interpreter ("gforth" . forth-mode))
 
