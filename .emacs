@@ -223,7 +223,9 @@
   :load-path "lisp/yasnippet/"
   :config
   (progn
-    (yas-load-directory "/home/eric/.emacs.d/lisp/yasnippet/snippets/")
+    (setq yas-snippet-dirs
+          (list"/home/eric/.emacs.d/lisp/yasnippet/snippets"
+               "/home/eric/Projects/DotEmacs/snippets"))
     (yas-global-mode)))
 
 ;;; These are packages I use for editing plain text in general.
