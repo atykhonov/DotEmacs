@@ -120,6 +120,7 @@
 (use-package s)
 (use-package f)
 (use-package ido :config (ido-mode 1))
+(use-package popup :load-path "lisp/popup-el/")
 
 ;;; Replace 'C-x C-b' with Ibuffer:
 
@@ -281,6 +282,10 @@
 
 (use-package diff-mode
   :mode ("COMMIT_EDITMSG" . diff-mode))
+
+(use-package git-messenger
+  :load-path "lisp/emacs-git-messenger/"
+  :bind ("C-c x g" . git-messenger:popup-message))
 
 ;;; Tup:
 
