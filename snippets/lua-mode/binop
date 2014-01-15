@@ -1,0 +1,4 @@
+# name: Binary Operators
+# key: binop
+# --
+$1 = $1 $2 $0
