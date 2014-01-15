@@ -430,4 +430,11 @@
   :load-path "lisp/zencoding/"
   :bind ("C-c n z" . zencoding-mode))
 
+;;; fic-mode:
+
+(use-package fic-mode
+  :load-path "lisp/fic-mode/"
+  :config
+  (progn (add-hook 'prog-mode-hook 'fic-mode)))
+
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
