@@ -261,6 +261,13 @@
 (use-package writeroom-mode
   :load-path "lisp/writeroom-mode/")
 
+(use-package unipoint
+  :load-path "lisp/unipoint/"
+  ;; The package rebinds C-\ by default, which I use.  So I restore
+  ;; the original binding.
+  :bind (("C-c \\" . unipoint-insert)
+         ("C-\\" . toggle-input-method)))
+
 ;;; My Pomodoro timer of choice.
 
 (use-package tomatinho
