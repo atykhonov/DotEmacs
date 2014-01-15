@@ -1,0 +1,6 @@
+# name: Pairs For-Loop
+# key: for-pairs
+# --
+for ${1:key},${2:value} in ${3:$$(yas-choose-value '("pairs" "ipairs"))} do
+$>$0
+end
