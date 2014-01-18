@@ -280,7 +280,13 @@
   :commands global-flycheck-mode
   :load-path "lisp/flycheck/"
   :bind ("C-c n f" . flycheck-mode)
-  :config (global-flycheck-mode 1))
+  :config
+  (progn
+    (global-flycheck-mode 1)
+    (use-package flycheck-tip
+      :commands flycheck-tip-cycle
+      :load-path "lisp/flycheck-tip/"
+      :bind ("C-c ! t" . flycheck-tip-cycle))))
 
 ;;; Git:
 
