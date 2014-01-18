@@ -386,6 +386,7 @@
     (mail-signature)))
 
 (use-package markdown-mode
+  :load-path "lisp/markdown-mode/"
   :bind ("C-c m k" . markdown-mode)
   :mode (("\\.md" . markdown-mode)
          ("\\.markdown" . markdown-mode))
