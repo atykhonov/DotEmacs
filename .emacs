@@ -223,7 +223,7 @@
                "/home/eric/Projects/DotEmacs/snippets"))
     (yas-global-mode)))
 
-;;; These are packages I use for editing plain text in general.
+;;; These are packages I use for plain text in general.
 
 (use-package simple
   :commands visual-line-mode
@@ -261,6 +261,10 @@
   ;; the original binding.
   :bind (("C-c \\" . unipoint-insert)
          ("C-\\" . toggle-input-method)))
+
+(use-package on-screen
+  :load-path "lisp/on-screen.el/"
+  :bind ("C-c x o" . on-screen-mode))
 
 ;;; My Pomodoro timer of choice.
 
