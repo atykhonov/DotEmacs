@@ -8,7 +8,6 @@
 ;;;; Conventions for key-bindings:
 ;;;;
 ;;;;     - C-c t:    Text commands.
-;;;;     - C-c d:    Desktop commands.
 ;;;;     - C-c m:    Major modes.
 ;;;;     - C-c n:    Minor modes.
 ;;;;     - C-c x:    General commands.
@@ -165,12 +164,6 @@
 (bind-key "C-c t f" 'toggle-text-mode-auto-fill)
 (bind-key "C-c t s" 'sort-lines)
 
-;;; These keys are for desktop commands, hence 'C-c d'.
-
-(bind-key "C-c d c" 'desktop-clear)
-(bind-key "C-c d d" 'desktop-change-dir)
-(bind-key "C-c d s" 'desktop-save)
-
 ;;; These keys are for commands I often use and use the 'C-c x' prefix
 ;;; as an association with 'M-x'.
 
@@ -181,6 +174,7 @@
     (completing-read "Project: " (directory-files "/home/eric/Documents/Logs/"))))
   (find-file (concat "/home/eric/Documents/Logs/" project)))
 
+(bind-key "C-c x c" 'desktop-clear)
 (bind-key "C-c x i" 'imenu)
 (bind-key "C-c x l" 'ejmr/open-project-log-file)
 (bind-key "C-c x v" 'visit-tags-table)
