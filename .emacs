@@ -320,6 +320,7 @@
 ;;; Rust:
 
 (use-package rust-mode
+  :load-path "/home/eric/Software/Rust/src/etc/emacs/"
   :mode ("\\.rs" . rust-mode))
 
 ;;; Emacs Lisp:
