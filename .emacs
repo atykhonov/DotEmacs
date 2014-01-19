@@ -449,4 +449,10 @@
   :config
   (progn (add-hook 'prog-mode-hook 'fic-mode)))
 
+;;; howdoi:
+
+(use-package howdoi
+  :load-path "lisp/howdoi-emacs/"
+  :bind ("C-c x h" . howdoi))
+
 ;;;; END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
