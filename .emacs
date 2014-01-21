@@ -289,7 +289,8 @@
 ;;; Git:
 
 (use-package conf-mode
-  :mode (".gitignore" . conf-mode))
+  :mode ((".gitignore" . conf-mode)
+         (".gitconfig" . conf-mode)))
 
 (use-package diff-mode
   :mode ("COMMIT_EDITMSG" . diff-mode))
